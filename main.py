@@ -16,7 +16,12 @@ def generate_random_string(length):
 random_string = generate_random_string(80)
 qr_code = pyqrcode.create(url+random_string)
 qr_code.png("qr_code.png", scale=6)
-    
+
+@app.route('/dorbella/ping')
+def ping():
+    return "Pong!"
+
+
 @app.route('/dorbella/<string:random_string>')
 def dorbella(random_string):
     # Check if the provided string matches the generated random string
@@ -29,4 +34,4 @@ def dorbella(random_string):
     return "Please wait for response", 200
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5000)
