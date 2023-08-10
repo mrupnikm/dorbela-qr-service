@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag dorbella:$(date +%s) -p 5000:5000
+      run: docker build . --file Dockerfile --tag dorbella:$(date +%s)
