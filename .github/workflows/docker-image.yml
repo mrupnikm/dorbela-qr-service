@@ -17,7 +17,3 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag dorbella:$(date +%s)
  
-    - name: Connect Tailscale
-      uses: tailscale/github-action@v1
-      with:
-        authkey: ${{ secrets.TS_OAUTH_SECRET }}
